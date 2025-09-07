@@ -43,7 +43,11 @@ export const Carousel = ({ products }: Props) => {
         </CardTitle>
         {price && price.unit_amount && (
           <p className="text-xl text-white">
-            ₹{(price.unit_amount / 100).toFixed(2)}
+            ₹
+            {(price.unit_amount / 100).toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </p>
         )}
       </CardContent>
